@@ -21,6 +21,21 @@ $(document).ready(function(){
       teamsList=response;
       
   });
+
+
+
+	var gamesAmount=teamsList.length-1;
+	var gamesDoneAmount=0;
+	$.each(teamsList,function(index,value){
+		if(value.game_ended=="true"){
+			gamesDoneAmount++
+		}
+	})
+
+	$(".results-title .current").html(gamesDoneAmount);
+	$(".results-title .all").html(gamesAmount);
+
+
 	var teamsImages;
 	var teamsImagesArray=[];
 	$.get( "https://mozgva.com/api/v1/teams/rating_percent?ids=5782%2C%206431%2C%206084%2C%205739%2C%205058%2C%205785%2C%204953%2C%204823%2C%206062%2C%204922%2C%204884%2C%208154%2C%205910%2C%204591%2C%205585%2C%204938%2C%206278%2C%205992%2C%205834%2C%209226%2C%206404%2C%205412%2C%206789%2C%205636%2C%205547%2C%205839%2C%204873", function( data ) {
