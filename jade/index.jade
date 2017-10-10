@@ -1,0 +1,73 @@
+include ./includes/components.jade
+
+doctype html
+html
+	+head ('Index')
+
+	body
+		+header
+
+		.main
+			.container
+				.main-bg
+				img(src="images/logo-27club.png" alt="27 club").main-logo
+				.main-leaders
+					.main-leaders-title
+						|Лидеры
+					ul.main-leaders-list
+
+		.fractions
+			.container
+				.fractions-title
+					|Баллы фракций
+				.fractions-text
+					|Три фракции борются за баллы. В каждой фракции есть команда, которая набирает больше всех очков. Такая команда попадает в Лидеры. И так далее пояснительный текст, который Катя называет нефункциональным :)
+				.fractions-wrap
+					.fractions-unit
+						.fractions-unit-header
+							.fractions-unit-logo
+								img(src="images/logo-fraction-01.png" alt="logo")
+							.fractions-unit-title
+								|Не часто бывает такой состав
+							.fractions-unit-points
+								|125
+						.fractions-unit-list
+							
+					.fractions-unit
+						.fractions-unit-header
+							.fractions-unit-logo
+								img(src="images/logo-fraction-02.png" alt="logo")
+							.fractions-unit-title
+								|D-фракция
+							.fractions-unit-points
+								|134
+						.fractions-unit-list
+							
+					.fractions-unit
+						.fractions-unit-header
+							.fractions-unit-logo
+								img(src="images/logo-fraction-03.png" alt="logo")
+							.fractions-unit-title
+								|Фракция<br> щебня
+							.fractions-unit-points
+								|125
+						.fractions-unit-list
+							
+		.results
+			.container
+				.results-title
+					|Результаты игр. <span class="current">1</span> из <span class="all">5</span>
+				.results-text
+					|Балы присуждаются в соответствии с местом. За первое место дается 27 баллов, за последнее — 1 балл.
+				.results-wrap
+					
+					
+					.results-controls
+						.results-controls-unit.prev.inactive
+						.results-controls-unit.next
+		.gradient
+			img(src="images/bottom-gradient.png" alt="gradient").desktop
+			img(src="images/bottom-gradient-mobile.png" alt="gradient").mobile
+						
+
+

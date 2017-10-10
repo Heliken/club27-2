@@ -1,0 +1,35 @@
+mixin head(title)
+	head
+		meta(charset="utf-8")
+		title= title
+
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no")
+		meta(name="format-detection" content="telephone=no")
+
+		link(rel="stylesheet" type="text/css" href="css/style.css")
+		link(rel="stylesheet" type="text/css" href="css/media.css")
+		
+		script(type="text/javascript" src="js/jquery-1.11.1.min.js")
+		block
+		script(type="text/javascript" src="js/libs.js")
+		block
+		script(type="text/javascript" src="js/scripts.js")
+
+mixin header
+	header.header&attributes(attributes)
+		.container 
+			.header-back
+				img(src="images/arrow-back.png" alt="back")
+			.header-logo
+				a(href="https://mozgva.com/")
+					img(src="images/main-logo.png" alt="мозгва")
+			.header-name
+				|Клуб 27
+			.header-menu
+				img(src="images/icon-menu.png" alt="menu")
+			.header-smile
+				img(src="images/icon-smile.png" alt="smile")
+
+
+mixin footer
+	footer&attributes(attributes): .container Footer
