@@ -77,11 +77,11 @@
               transform: scale(0.64); }
           .main-leaders-list-unit .image {
             margin-right: 14px;
-            width: 47px; }
+            width: 60px; }
             .main-leaders-list-unit .image img {
-              -webkit-transform: scale(0.64) translateX(-75%) translateY(-70%);
-              -ms-transform: scale(0.64) translateX(-75%) translateY(-70%);
-              transform: scale(0.64) translateX(-75%) translateY(-70%); }
+              -webkit-transform: translateX(-50%) translateY(-50%);
+              -ms-transform: translateX(-50%) translateY(-50%);
+              transform: translateX(-50%) translateY(-50%); }
   .fractions {
     margin-top: 70px; }
     .fractions-title {
@@ -127,9 +127,9 @@
         .fractions-unit-list-unit .rank {
           width: 72px; }
           .fractions-unit-list-unit .rank img {
-            -webkit-transform: scale(0.8) translateY(-54%);
-            -ms-transform: scale(0.8) translateY(-54%);
-            transform: scale(0.8) translateY(-54%); }
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%); }
         .fractions-unit-list-unit .underline {
           width: calc(100% - 82px - 30px); }
   .results {

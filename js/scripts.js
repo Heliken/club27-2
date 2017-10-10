@@ -29,20 +29,20 @@ $(document).ready(function(){
 	$.each(teamsImages,function(index,value){
 		teamsImagesArray.push([$.trim(index),value["link_wreaths"]]);
 	})
-	console.log(teamsImagesArray);
+	
 	$.each(teamsList[0]["Клуб 27"],function(index,value){
 		
 		switch(value.fraction) {
 		  case 'Не часто бывает такой состав':  // if (x === 'value1')
-		   fractionList1.push([index,0]);
+		   fractionList1.push([$.trim(index),0]);
 		   break;
 
 		  case 'Фракция щебня':  // if (x === 'value1')
-		   fractionList2.push([index,0]);
+		   fractionList2.push([$.trim(index),0]);
 		   break;
 
 		  case 'D-фракция':  // if (x === 'value1')
-		   fractionList3.push([index,0]);
+		   fractionList3.push([$.trim(index),0]);
 		   break;
 
 		}
@@ -82,17 +82,17 @@ $(document).ready(function(){
 			$.each(teams,function(index,value){
 				sortedTeams.push([index,value.points]);
 				for(var b=0;b<fractionList1.length;b++){
-					if(fractionList1[b][0]==index){
+					if(fractionList1[b][0]==$.trim(index)){
 						fractionList1[b][1]=fractionList1[b][1]+parseInt(value.points);
 					}
 				}
 				for(var b=0;b<fractionList2.length;b++){
-					if(fractionList2[b][0]==index){
+					if(fractionList2[b][0]==$.trim(index)){
 						fractionList2[b][1]=fractionList2[b][1]+parseInt(value.points);
 					}
 				}
 				for(var b=0;b<fractionList3.length;b++){
-					if(fractionList3[b][0]==index){
+					if(fractionList3[b][0]==$.trim(index)){
 						fractionList3[b][1]=fractionList3[b][1]+parseInt(value.points);
 					}
 				}
@@ -125,6 +125,7 @@ $(document).ready(function(){
 	var fraction1Sum=0;
 	var fraction2Sum=0;
 	var fraction3Sum=0;
+
 	for(var i=0;i<fractionList1.length;i++){
 		var fractionsListObject=$(".fractions-unit").eq(0);
 		var imageLink=0;
@@ -134,7 +135,7 @@ $(document).ready(function(){
 				imageLink=teamsImagesArray[l][1];
 			}
 		}
-		console.log(unit);
+		
 		fraction1Sum=fraction1Sum+fractionList1[i][1];
 		var fractionsUnit='<div class="fractions-unit-list-unit"><div class="star"></div><div class="rank"><img src='+imageLink+' alt=""></div><div class="underline"><div class="title">'+fractionList1[i][0]+'</div><div class="points">'+fractionList1[i][1]+'</div></div><div class="clear"></div></div>';
 		fractionsListObject.append(fractionsUnit);
