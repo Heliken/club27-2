@@ -85,6 +85,15 @@
               -webkit-transform: translateX(-50%) translateY(-50%);
               -ms-transform: translateX(-50%) translateY(-50%);
               transform: translateX(-50%) translateY(-50%); }
+          .main-leaders-list-unit .fraction {
+            width: 30px; }
+            .main-leaders-list-unit .fraction img {
+              -webkit-transform: translateX(-50%) translateY(-50%) scale(0.37);
+              -ms-transform: translateX(-50%) translateY(-50%) scale(0.37);
+              transform: translateX(-50%) translateY(-50%) scale(0.37); }
+          .main-leaders-list-unit .name {
+            margin-top: 5px;
+            width: calc(100% - 170px); }
   .fractions {
     margin-top: 70px; }
     .fractions-title {

@@ -202,7 +202,9 @@ $(document).ready(function(){
 	resultArray.push([fractionList3[0],"D-фракция"]);
 
 	
-	
+	resultArray=resultArray.sort(function(a, b) {
+		return b[0][1] - a[0][1];
+	});
 	for(var i=0;i<resultArray.length;i++){
 		var fraction;
 		var place=i+1
@@ -224,14 +226,13 @@ $(document).ready(function(){
 		   break;
 
 		}
-		console.log(unit);
-		console.log(teamsImagesArray);
+
 		for(var l=0;l<teamsImagesArray.length;l++){
 			if(teamsImagesArray[l][0]==id){
 				imageLink=teamsImagesArray[l][1];
 			}
 		}
-		var leaders='<li class="main-leaders-list-unit"><span class="number">'+place+'</span><div class="star"></div><div class="fraction"><img src='+fraction+'></div><div class="image"><img src='+imageLink+'></div><span class="name">'+resultArray[i][0][0]+'</span></li>'
+		var leaders='<li class="main-leaders-list-unit"><span class="number">'+place+'</span><div class="star"></div><div class="fraction"><img src='+fraction+'></div><div class="image"><img src='+imageLink+' ></div><span class="name">'+resultArray[i][0][0]+'</span></li>'
 		var special='<li class="main-leaders-list-unit"><span class="number">'+place+'</span><div class="star"><img src="images/gold-star.png" alt="star"></div>div class="fraction"><img src='+fraction+'></div><div class="image"><img src='+imageLink+'></div><span class="name">'+resultArray[i][0][0]+'</span></li>'
 		if(unit=="Черешня"){
 			leadersList.append(special);
