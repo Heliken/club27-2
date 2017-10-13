@@ -3,6 +3,7 @@
     width: 100%;
     padding: 0 12px; }
   .header {
+    min-width: auto;
     height: 60px; }
     .header .container {
       padding: 0 20px;
@@ -31,6 +32,7 @@
         vertical-align: top;
         width: 101px; }
     .header-smile {
+      display: none;
       height: 100%;
       margin-top: 0;
       padding-top: 16px;
@@ -38,6 +40,7 @@
       .header-smile img {
         vertical-align: top; }
     .header-menu {
+      display: none;
       height: 100%;
       margin-top: 0; }
       .header-menu img {

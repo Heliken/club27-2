@@ -10,6 +10,7 @@
 		padding:0 12px;
 	}
 	.header{
+		min-width:auto;
 		.container{
 			padding:0 20px;
 			position: relative;
@@ -44,6 +45,7 @@
 			}
 		}
 		&-smile{
+			display:none;
 			height:100%;
 			margin-top:0;
 			padding-top: 16px;
@@ -54,6 +56,7 @@
 			}
 		}
 		&-menu{
+			display: none;
 			height:100%;
 			margin-top:0;
 			img{

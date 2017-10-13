@@ -295,6 +295,7 @@ input[type=submit], input[type=button] {
 	width:1400px;
 }
 .header{
+	min-width:1400px;
 	width:100%;
 	line-height: 90px;
 	height:90px;
@@ -391,9 +392,23 @@ input[type=submit], input[type=button] {
 				.name{
 					line-height: 30px;
 					display: inline-block;
-					width:calc(100% - 190px);
+					width:calc(100% - 240px);
 					letter-spacing:-0.96px;
 					opacity:0.7;
+					vertical-align: top;
+					 margin-top:20px;
+				}
+				.fraction{
+					display: inline-block;
+					width:55px;
+					height:100%;
+					position:relative;
+					img{
+						position: absolute;
+						top:50%;
+						left:50%;
+						transform:translateX(-50%) translateY(-50%) scale(.5);
+					}
 				}
 				.star{
 					vertical-align: top;

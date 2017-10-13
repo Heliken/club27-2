@@ -42,22 +42,22 @@ $(document).ready(function(){
   		teamsImages=data;
 	})
 	$.each(teamsImages,function(index,value){
-		teamsImagesArray.push([$.trim(index),value["link_wreaths"]]);
+		teamsImagesArray.push([$.trim(value["team_id"]),value["link_wreaths"]]);
 	})
 	
 	$.each(teamsList[0]["Клуб 27"],function(index,value){
 		
 		switch(value.fraction) {
 		  case 'Не часто бывает такой состав':  // if (x === 'value1')
-		   fractionList1.push([$.trim(index),0]);
+		   fractionList1.push([$.trim(index),0,value.team_id]);
 		   break;
 
 		  case 'Фракция щебня':  // if (x === 'value1')
-		   fractionList2.push([$.trim(index),0]);
+		   fractionList2.push([$.trim(index),0,value.team_id]);
 		   break;
 
 		  case 'D-фракция':  // if (x === 'value1')
-		   fractionList3.push([$.trim(index),0]);
+		   fractionList3.push([$.trim(index),0,value.team_id]);
 		   break;
 
 		}
@@ -140,11 +140,11 @@ $(document).ready(function(){
 	var fraction1Sum=0;
 	var fraction2Sum=0;
 	var fraction3Sum=0;
-
+	
 	for(var i=0;i<fractionList1.length;i++){
 		var fractionsListObject=$(".fractions-unit").eq(0);
 		var imageLink=0;
-		var unit=fractionList1[i][0];
+		var unit=fractionList1[i][2];
 		for(var l=0;l<teamsImagesArray.length;l++){
 			if(teamsImagesArray[l][0]==unit){
 				imageLink=teamsImagesArray[l][1];
@@ -161,7 +161,7 @@ $(document).ready(function(){
 		fraction2Sum=fraction2Sum+fractionList2[i][1];
 		var fractionsListObject=$(".fractions-unit").eq(2);
 		var imageLink=0;
-		var unit=fractionList2[i][0];
+		var unit=fractionList2[i][2];
 		for(var l=0;l<teamsImagesArray.length;l++){
 			if(teamsImagesArray[l][0]==unit){
 				imageLink=teamsImagesArray[l][1];
@@ -175,7 +175,7 @@ $(document).ready(function(){
 	for(var i=0;i<fractionList3.length;i++){
 		fraction3Sum=fraction3Sum+fractionList3[i][1];
 		var imageLink=0;
-		var unit=fractionList3[i][0];
+		var unit=fractionList3[i][2];
 		for(var l=0;l<teamsImagesArray.length;l++){
 			if(teamsImagesArray[l][0]==unit){
 				imageLink=teamsImagesArray[l][1];
@@ -194,25 +194,46 @@ $(document).ready(function(){
 			fractionsListObject.append(fractionsUnit);
 		}
 	}
-	$(".fractions-unit").eq(1).find(".fractions-unit-points").html(fraction3Sum);
 	
-	var resultArray=fractionList1.concat(fractionList2,fractionList3);
-	resultArray=resultArray.sort(function(a, b) {
-		return b[1] - a[1];
-	});
-	for(var i=0;i<3;i++){
+	$(".fractions-unit").eq(1).find(".fractions-unit-points").html(fraction3Sum);
+	var resultArray=[];
+	resultArray.push([fractionList1[0],"Не часто бывает такой состав"]);
+	resultArray.push([fractionList2[0],"Фракция щебня"]);
+	resultArray.push([fractionList3[0],"D-фракция"]);
+
+	
+	
+	for(var i=0;i<resultArray.length;i++){
+		var fraction;
 		var place=i+1
 		var leadersList=$(".main-leaders-list");
 		var imageLink=0;
-		var unit=resultArray[i][0];
+		var unit=resultArray[i][0][0];
+		var id = resultArray[i][0][2];
+		switch(resultArray[i][1]) {
+		  case 'Не часто бывает такой состав':  // if (x === 'value1')
+		   fraction="images/logo-fraction-01.png";
+		   break;
+
+		  case 'Фракция щебня':  // if (x === 'value1')
+		   fraction="images/logo-fraction-03.png"
+		   break;
+
+		  case 'D-фракция':  // if (x === 'value1')
+		   fraction="images/logo-fraction-02.png"
+		   break;
+
+		}
+		console.log(unit);
+		console.log(teamsImagesArray);
 		for(var l=0;l<teamsImagesArray.length;l++){
-			if(teamsImagesArray[l][0]==unit){
+			if(teamsImagesArray[l][0]==id){
 				imageLink=teamsImagesArray[l][1];
 			}
 		}
-		var leaders='<li class="main-leaders-list-unit"><span class="number">'+place+'</span><div class="star"></div><div class="image"><img src='+imageLink+'></div><span class="name">'+resultArray[i][0]+'</span></li>'
-		var special='<li class="main-leaders-list-unit"><span class="number">'+place+'</span><div class="star"><img src="images/gold-star.png" alt="star"></div><div class="image"><img src='+imageLink+'></div><span class="name">'+resultArray[i][0]+'</span></li>'
-		if(resultArray[i][0]=="Черешня"){
+		var leaders='<li class="main-leaders-list-unit"><span class="number">'+place+'</span><div class="star"></div><div class="fraction"><img src='+fraction+'></div><div class="image"><img src='+imageLink+'></div><span class="name">'+resultArray[i][0][0]+'</span></li>'
+		var special='<li class="main-leaders-list-unit"><span class="number">'+place+'</span><div class="star"><img src="images/gold-star.png" alt="star"></div>div class="fraction"><img src='+fraction+'></div><div class="image"><img src='+imageLink+'></div><span class="name">'+resultArray[i][0][0]+'</span></li>'
+		if(unit=="Черешня"){
 			leadersList.append(special);
 		} else{
 			leadersList.append(leaders);
