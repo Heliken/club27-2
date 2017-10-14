@@ -167,7 +167,7 @@ $(document).ready(function(){
 				imageLink=teamsImagesArray[l][1];
 			}
 		}
-		var fractionsUnit='<div class="fractions-unit-list-unit"><div class="star"></div><div class="rank"><img src='+imageLink+' alt=""></div><div class="underline"><div class="title">'+fractionList2[i][0]+'</div><div class="points">'+fractionList2[i][1]+'</div></div></div>';
+		var fractionsUnit='<div class="fractions-unit-list-unit"><div class="star"></div><div class="rank"><img src='+imageLink+' alt=""></div><div class="underline"><div class="title">'+fractionList2[i][0]+'</div><div class="points">'+fractionList2[i][1]+'</div></div><div class="clear"></div></div>';
 		fractionsListObject.append(fractionsUnit);
 	}
 	$(".fractions-unit").eq(2).find(".fractions-unit-points").html(fraction2Sum);
@@ -183,10 +183,10 @@ $(document).ready(function(){
 		}
 		var fractionsListObject=$(".fractions-unit").eq(1);
 		
-		var specialUnit='<div class="fractions-unit-list-unit"><div class="star"><img src="images/gold-star.png" alt="star"></div><div class="rank"><img src='+imageLink+' alt="rank"></div><div class="underline"><div class="title">'+fractionList3[i][0]+'</div><div class="points">'+fractionList3[i][1]+'</div></div><div class="clear"></div></div>';
+		var specialUnit='<div class="fractions-unit-list-unit"><div class="star"><img src="images/gold-star.png" alt="star"></div><div class="rank"><img src='+imageLink+' alt="rank"></div><div class="underline"><div class="title">'+fractionList3[i][0]+'</div><div class="points">'+fractionList3[i][1]+'</div></div><div class="clear"></div><div class="clear"></div></div>';
 		
 		
-		var fractionsUnit='<div class="fractions-unit-list-unit"><div class="star"></div><div class="rank"><img src='+imageLink+' alt=""></div><div class="underline"><div class="title">'+fractionList3[i][0]+'</div><div class="points">'+fractionList3[i][1]+'</div></div></div>';
+		var fractionsUnit='<div class="fractions-unit-list-unit"><div class="star"></div><div class="rank"><img src='+imageLink+' alt=""></div><div class="underline"><div class="title">'+fractionList3[i][0]+'</div><div class="points">'+fractionList3[i][1]+'</div></div><div class="clear"></div></div>';
 		
 		if(fractionList3[i][0]=="Черешня"){
 			fractionsListObject.append(specialUnit);

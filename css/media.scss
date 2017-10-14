@@ -8,6 +8,7 @@
 	.container{
 		width:100%;
 		padding:0 12px;
+		min-width: 320px;
 	}
 	.header{
 		min-width:auto;
@@ -70,7 +71,7 @@
 		background-size: 100%;
 		 &-bg{
 		 	margin-top:0;
-		 	
+		 	min-width: 320px;
 		 	max-width: 100%;
 		 	background-size: 100%;
 		 	background-repeat:no-repeat;
@@ -79,11 +80,12 @@
 		 &-logo{
 		 	top:31%;
 		 	width:200px;
-		 	left:calc(50% - 100px);
+		 	transform:translateX(-50%);
+		 	
 		 }
 		 &-leaders{
 		 	width:100%;
-		 	margin-top:20px;
+		 	margin-top:30px;
 		 	&-title{
 		 		font-size: 24px;
 		 	}
@@ -151,7 +153,7 @@
 			border-bottom:1px solid #332946;
 			&.open{
 				background-color:#0c0022;
-				max-height: 440px;
+				max-height: 520px;
 			}
 			&-header{
 				padding-top:12px;
@@ -170,8 +172,10 @@
 		 				}
 		 			}
 		 			.rank{
+
 		 				width:72px;
 		 				img{
+		 					max-height:53%;
 		 					transform:translateY(-50%);
 		 				}
 		 			}
@@ -241,6 +245,7 @@
 				background-color: #000;
 				padding:0;
 				width:100%;
+				max-width:100%;
 			}
 			&-list{
 				width:100%;

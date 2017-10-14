@@ -291,11 +291,13 @@ input[type=submit], input[type=button] {
 	position: relative;
 	height:100%;
 	margin:0 auto;
-	padding:0 60px;
-	width:1400px;
+	padding:0 20px;
+	width:100%;
+	min-width: 1000px;
+	max-width:1400px;
 }
 .header{
-	min-width:1400px;
+	
 	width:100%;
 	line-height: 90px;
 	height:90px;
@@ -336,7 +338,8 @@ input[type=submit], input[type=button] {
 	}
 }
 .main{
-	min-width: 1400px;
+	
+	
 	width:100%;
 	background-position:center top;
 	background-repeat: no-repeat;
@@ -350,6 +353,7 @@ input[type=submit], input[type=button] {
 	&-bg{
 		margin-top: 5px;
 		max-width: 1400px;
+		min-width: 1000px;
 		 padding-bottom: 71%;
 		background-image:url("../images/main-bg.png");
 		background-size:cover;
@@ -357,13 +361,16 @@ input[type=submit], input[type=button] {
 	}
 	&-logo{
 		 position: absolute;
-	    top: 419px;
-	    left: calc(50% - 220px);
+	    top: 43%;
+	    left: 50%;
+	    width:32%;
+	    max-width: 440px;
+	    transform:translateX(-50%);
 	}
 	&-leaders{
 		width:450px;
 		margin:0 auto;
-		margin-top:-281px;
+		margin-top:-17%;
 		&-title{
 			text-align: center;
 			font-family:'GraublauSlabBold';
@@ -464,12 +471,12 @@ input[type=submit], input[type=button] {
 		justify-content:space-between;
 	}
 	&-unit{
-		width: 416px;
+		width: 32.5%;
 		
 		&-header{
 			height:60px;
 			position: relative;
-			padding-left: 94px;
+			padding-left: 22%;
 			margin-bottom:46px;
 		}
 		&-logo{
@@ -479,7 +486,7 @@ input[type=submit], input[type=button] {
 			vertical-align: top;
 			margin-top:10px;
 			margin-left: 10px;
-			width:125px;
+			width: calc(85% - 90px);
 			display: inline-block;
 		}
 		&-points{
@@ -493,11 +500,11 @@ input[type=submit], input[type=button] {
 		&-list{
 
 			&-unit{
-				line-height: 46px;
-				height:46px;
+				display: 	table-row;
 				
 				.star{
-					height:100%;
+					height:46px;
+					
 					width:50px;
 					float:left;
 					position: relative;
@@ -509,10 +516,11 @@ input[type=submit], input[type=button] {
 					}
 				}
 				.rank{
+					height:46px;
 					position: relative;
 					width:92px;
 					float:left;
-					height:100%;
+					
 					margin-right: 10px;
 					img{
 						
@@ -524,18 +532,19 @@ input[type=submit], input[type=button] {
 					}
 				}
 				.underline{
-					
-					height:100%;
+					display: flex;
+	    			justify-content: space-between;
+	    			align-items: center;
+					min-height:46px;
 					border-bottom:1px solid #3f3356;
 					padding-right: 9px;
-					float:left;
+					
 					width:calc(100% - 102px - 50px);
 				}
 				.title{
-					align-items:center;
-					display:inline-flex;
+					word-wrap: break-word;
 					line-height: 20px;
-					max-width: 90%;
+					max-width: 85%;
 					height:100%;
 					float:left;
 				}
@@ -613,7 +622,9 @@ input[type=submit], input[type=button] {
 		padding-top:38px;
 		padding-left: 40px;
 		padding-bottom:108px;
-		width:416px;
+		min-width:290px;
+		max-width:416px;
+		width:23vw;
 		background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.84) 0%, rgba(0, 0, 0, 0.8) 89%, rgba(0, 0, 0, 0.04) 100%);
 		background: -o-linear-gradient(top, rgba(0, 0, 0, 0.84) 0%, rgba(0, 0, 0, 0.8) 89%, rgba(0, 0, 0, 0.04) 100%);
 		background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.84) 0%, rgba(0, 0, 0, 0.8) 89%, rgba(0, 0, 0, 0.04) 100%);
@@ -635,7 +646,7 @@ input[type=submit], input[type=button] {
 			}
 		}
 		&-list{
-			width:338px;
+			width:84%;
 			
 			&-header{
 				border-width:2px;
@@ -670,9 +681,11 @@ input[type=submit], input[type=button] {
 			
 		}
 		&.notPlayed{
+			max-width:213px;
 			height:278px;
 			padding-left: 30px;
-			width:213px;
+			min-width:155px;
+			width: 12.25vw;
 			background: $dark-blue;
 			color:#fff;
 			&.prev{
