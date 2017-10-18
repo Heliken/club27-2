@@ -66,7 +66,7 @@ $(document).ready(function(){
 		var monthNames = [
 		    "января", "февраля", "марта",
 		    "апреля", "мая", "июня", "июля",
-		    "августа", "September", "октября",
+		    "августа", "сентября", "октября",
 		    "ноября", "декабря"
 		  ];
 		var gameDay=teamsList[i];
@@ -84,7 +84,7 @@ $(document).ready(function(){
 			resultsWrap.append(resultsUnitNotPlayed);
 		}
 		var textObject='<div class="results-unit-text">Начало в 19:00   </div>';
-		var dateObject='<div class="results-unit-date"><span class="number">'+gameDate.slice(0,2)+'</span><span class="month">'+monthNames[gameDate.slice(3,5)]+'</span></div>';
+		var dateObject='<div class="results-unit-date"><span class="number">'+gameDate.slice(0,2)+'</span><span class="month">'+monthNames[(gameDate.slice(3,5))+1]+'</span></div>';
 		var resultsUnitObject=$(".results-wrap").find(".results-unit").last();
 		var list='<table class="results-unit-list"><tr class="results-unit-list-header"><th></th><th class="points">Баллы</th><th class="places">Места</th></tr></table>';
 		var sortedTeams=[];
